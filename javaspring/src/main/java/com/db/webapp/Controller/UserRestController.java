@@ -2,6 +2,7 @@ package com.db.webapp.Controller;
 
 import java.util.Base64;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.db.webapp.Repository.UserRepository;
+import com.db.webapp.Repository.V1gmrepo;
+import com.db.webapp.Repository.V1nmrepo;
 import com.db.webapp.Service.SecurityService;
 import com.db.webapp.model.User;
+import com.db.webapp.model.V1gm;
+import com.db.webapp.model.V1nm;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin
@@ -21,9 +25,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class UserRestController {
     @Autowired
     SecurityService uRepo;
-
     @Autowired
-    private UserRepository repo2;
+    private V1gmrepo v1gmrepo;
+    @Autowired
+    private V1nmrepo v1nmrepo;
 
     @PostMapping("register")
     public ResponseEntity<String> register(
@@ -87,9 +92,12 @@ public class UserRestController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-    @GetMapping("data")
-    List<String> data() {
-        return repo2.getdata();
-
+    @GetMapping("v1gm")
+    List<V1gm> datav1gm() {
+        return v1gmrepo.findAll();
+    }
+    @GetMapping("v1nm")
+    List<V1nm> datav1nm() {
+        return v1nmrepo.findAll();
     }
 }
