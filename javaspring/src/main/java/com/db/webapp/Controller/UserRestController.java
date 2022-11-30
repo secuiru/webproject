@@ -1,8 +1,6 @@
 package com.db.webapp.Controller;
-
 import java.util.Base64;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +11,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.db.webapp.Repository.V1gmrepo;
 import com.db.webapp.Repository.V1nmrepo;
+import com.db.webapp.Repository.V1smrepo;
+import com.db.webapp.Repository.V1garepo;
+import com.db.webapp.Repository.V1narepo;
+import com.db.webapp.Repository.V1sarepo;
 import com.db.webapp.Service.SecurityService;
 import com.db.webapp.model.User;
 import com.db.webapp.model.V1gm;
 import com.db.webapp.model.V1nm;
+import com.db.webapp.model.V1sm;
+import com.db.webapp.model.V1ga;
+import com.db.webapp.model.V1na;
+import com.db.webapp.model.V1sa;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -29,6 +35,14 @@ public class UserRestController {
     private V1gmrepo v1gmrepo;
     @Autowired
     private V1nmrepo v1nmrepo;
+    @Autowired
+    private V1smrepo v1smrepo;
+    @Autowired
+    private V1garepo v1garepo;
+    @Autowired
+    private V1narepo v1narepo;
+    @Autowired
+    private V1sarepo v1sarepo;
 
     @PostMapping("register")
     public ResponseEntity<String> register(
@@ -100,4 +114,21 @@ public class UserRestController {
     List<V1nm> datav1nm() {
         return v1nmrepo.findAll();
     }
+    @GetMapping("v1sm")
+    List<V1sm> datav1sm() {
+        return v1smrepo.findAll();
+    }
+    @GetMapping("v1ga")
+    List<V1ga> datav1ga() {
+        return v1garepo.findAll();
+    }
+    @GetMapping("v1na")
+    List<V1na> datav1na() {
+        return v1narepo.findAll();
+    }
+    @GetMapping("v1sa")
+    List<V1sa> datav1sa() {
+        return v1sarepo.findAll();
+    }
 }
+
