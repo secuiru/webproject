@@ -9,7 +9,7 @@ import com.db.webapp.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
 
-    @Query(value ="SELECT * FROM g_monthly_json", nativeQuery= true)
+    @Query(value ="SELECT * FROM v1gm", nativeQuery= true)
     List<String> getdata();
 
 
