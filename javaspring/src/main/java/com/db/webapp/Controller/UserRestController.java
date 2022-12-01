@@ -9,20 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.db.webapp.Repository.V1gmrepo;
-import com.db.webapp.Repository.V1nmrepo;
-import com.db.webapp.Repository.V1smrepo;
-import com.db.webapp.Repository.V1garepo;
-import com.db.webapp.Repository.V1narepo;
-import com.db.webapp.Repository.V1sarepo;
+import com.db.webapp.Repository.*;
 import com.db.webapp.Service.SecurityService;
-import com.db.webapp.model.User;
-import com.db.webapp.model.V1gm;
-import com.db.webapp.model.V1nm;
-import com.db.webapp.model.V1sm;
-import com.db.webapp.model.V1ga;
-import com.db.webapp.model.V1na;
-import com.db.webapp.model.V1sa;
+import com.db.webapp.model.*;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -43,6 +32,12 @@ public class UserRestController {
     private V1narepo v1narepo;
     @Autowired
     private V1sarepo v1sarepo;
+    @Autowired
+    private V2repo v2repo;
+    @Autowired
+    private V5repo v5repo;
+    @Autowired
+    private V6repo v6repo;
 
     @PostMapping("register")
     public ResponseEntity<String> register(
@@ -130,5 +125,24 @@ public class UserRestController {
     List<V1sa> datav1sa() {
         return v1sarepo.findAll();
     }
+    @GetMapping("v2")
+    List<V2> datav2() {
+        return v2repo.findAll();
+    }
+    @GetMapping("v5")
+    List<V5> datav5() {
+        return v5repo.findAll();
+    }
+    @GetMapping("v6")
+    List<V6> datav6() {
+        return v6repo.findAll();
+    }
+
+
+
+
+
+
 }
+
 
