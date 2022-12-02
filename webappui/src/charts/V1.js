@@ -10,12 +10,9 @@ import 'chartjs-adapter-luxon';
 
 
 
-const urlv1gm = 'http://localhost:8080/v1gm'
-const urlv1nm = 'http://localhost:8080/v1nm'
-const urlv1sm = 'http://localhost:8080/v1sm'
-const urlv1ga = 'http://localhost:8080/v1ga'
-const urlv1na = 'http://localhost:8080/v1na'
-const urlv1sa = 'http://localhost:8080/v1sa'
+const urlv1a = 'http://localhost:8080/v1a'
+const urlv1m = 'http://localhost:8080/v1m'
+
 const urlv2 = 'http://localhost:8080/v2'
 
 
@@ -24,75 +21,27 @@ const urlv2 = 'http://localhost:8080/v2'
 
 export default function V1() {
 
-  const [v1gm, setv1gm] = useState([])
-  const [v1nm, setv1nm] = useState([])
-  const [v1sm, setv1sm] = useState([])
-  const [v1ga, setv1ga] = useState([])
-  const [v1na, setv1na] = useState([])
-  const [v1sa, setv1sa] = useState([])
+  const [v1a, setv1a] = useState([])
+  const [v1m, setv1m] = useState([])
+
   const [v2, setv2] = useState([])
 
   useEffect(() => {
-    axios.get(urlv1gm)
+    axios.get(urlv1a)
       .then((response) => {
         console.log(response.data)
-        setv1gm(response.data)
+        setv1a(response.data)
       }).catch(error => {
-        alert(error.response.error)
+        alert("error from v1a")
       })
   }, [])
   useEffect(() => {
-    axios.get(urlv1nm)
+    axios.get(urlv1m)
       .then((response) => {
         console.log(response.data)
-        setv1nm(response.data)
+        setv1m(response.data)
       }).catch(error => {
-        alert(error.response.error)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get(urlv1sm)
-      .then((response) => {
-        console.log(response.data)
-        setv1sm(response.data)
-      }).catch(error => {
-        alert(error.response.error)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get(urlv1gm)
-      .then((response) => {
-        console.log(response.data)
-        setv1ga(response.data)
-      }).catch(error => {
-        alert(error.response.error)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get(urlv1na)
-      .then((response) => {
-        console.log(response.data)
-        setv1na(response.data)
-      }).catch(error => {
-        alert(error.response.error)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get(urlv1sa)
-      .then((response) => {
-        console.log(response.data)
-        setv1sa(response.data)
-      }).catch(error => {
-        alert(error.response.error)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get(urlv1ga)
-      .then((response) => {
-        console.log(response.data)
-        setv2(response.data)
-      }).catch(error => {
-        alert(error.response.error)
+        alert("error from v1m")
       })
   }, [])
   useEffect(() => {
@@ -107,18 +56,18 @@ export default function V1() {
   }, [])
 
   const v1 = {
-    labels: v1ga.map(d => d.time),
+    labels: v1a.map(d => d.time),
     datasets: [
       {
         label: 'Global (NH+SH)/2 monthly',
         backgroundColor: 'rgba(255,0,0,1)',
         borderColor: 'rgba(255,0,0,1)',
         borderWidth: 2,
-        data: v1gm,
+        data: v1m,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'gm'
         }
       },
       {
@@ -126,11 +75,11 @@ export default function V1() {
         backgroundColor: 'rgba(0,255,0,1)',
         borderColor: 'rgba(0,255,0,1)',
         borderWidth: 2,
-        data: v1nm,
+        data: v1m,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'nm'
         }
       },
       {
@@ -138,11 +87,11 @@ export default function V1() {
         backgroundColor: 'rgba(0,0,255,1)',
         borderColor: 'rgba(0,0,255,1)',
         borderWidth: 2,
-        data: v1sm,
+        data: v1m,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'sm'
         }
       },
       {
@@ -150,11 +99,11 @@ export default function V1() {
         backgroundColor: 'rgba(255,0,0,1)',
         borderColor: 'rgba(255,0,0,1)',
         borderWidth: 2,
-        data: v1ga,
+        data: v1a,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'ga'
         }
       },
       {
@@ -162,11 +111,11 @@ export default function V1() {
         backgroundColor: 'rgba(0,255,0,1)',
         borderColor: 'rgba(0,255,0,1)',
         borderWidth: 2,
-        data: v1na,
+        data: v1a,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'na'
         }
       },
       {
@@ -174,11 +123,11 @@ export default function V1() {
         backgroundColor: 'rgba(0,0,255,1)',
         borderColor: 'rgba(0,0,255,1)',
         borderWidth: 2,
-        data: v1sa,
+        data: v1a,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'sa'
         }
       },
       {
@@ -209,7 +158,8 @@ export default function V1() {
     },
     scales: {
 
-    },
+      x: {type: 'time'}
+    } ,
   }
 
   

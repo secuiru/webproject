@@ -21,19 +21,13 @@ public class UserRestController {
     @Autowired
     SecurityService uRepo;
     @Autowired
-    private V1gmrepo v1gmrepo;
+    private V1arepo v1arepo;
     @Autowired
-    private V1nmrepo v1nmrepo;
-    @Autowired
-    private V1smrepo v1smrepo;
-    @Autowired
-    private V1garepo v1garepo;
-    @Autowired
-    private V1narepo v1narepo;
-    @Autowired
-    private V1sarepo v1sarepo;
+    private V1mrepo v1mrepo;
     @Autowired
     private V2repo v2repo;
+    @Autowired
+    private V3repo v3repo;
     @Autowired
     private V5repo v5repo;
     @Autowired
@@ -101,33 +95,22 @@ public class UserRestController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-    @GetMapping("v1gm")
-    List<V1gm> datav1gm() {
-        return v1gmrepo.findAll();
+
+    @GetMapping("v1m")
+    List<V1m> datav1m() {
+        return v1mrepo.findAll();
     }
-    @GetMapping("v1nm")
-    List<V1nm> datav1nm() {
-        return v1nmrepo.findAll();
-    }
-    @GetMapping("v1sm")
-    List<V1sm> datav1sm() {
-        return v1smrepo.findAll();
-    }
-    @GetMapping("v1ga")
-    List<V1ga> datav1ga() {
-        return v1garepo.findAll();
-    }
-    @GetMapping("v1na")
-    List<V1na> datav1na() {
-        return v1narepo.findAll();
-    }
-    @GetMapping("v1sa")
-    List<V1sa> datav1sa() {
-        return v1sarepo.findAll();
+    @GetMapping("v1a")
+    List<V1a> datav1a() {
+        return v1arepo.findAll();
     }
     @GetMapping("v2")
     List<V2> datav2() {
         return v2repo.findAll();
+    }
+    @GetMapping("v3")
+    List<V3> datav3() {
+        return v3repo.findAll();
     }
     @GetMapping("v5")
     List<V5> datav5() {

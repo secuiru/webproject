@@ -15,8 +15,6 @@ const urlv2 = 'http://localhost:8080/v2'
 
 
 
-
-
 export default function V2() {
 
 
