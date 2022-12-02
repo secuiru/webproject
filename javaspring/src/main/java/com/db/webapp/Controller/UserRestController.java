@@ -1,8 +1,6 @@
 package com.db.webapp.Controller;
-
 import java.util.Base64;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,12 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.db.webapp.Repository.V1gmrepo;
-import com.db.webapp.Repository.V1nmrepo;
+import com.db.webapp.Repository.*;
 import com.db.webapp.Service.SecurityService;
-import com.db.webapp.model.User;
-import com.db.webapp.model.V1gm;
-import com.db.webapp.model.V1nm;
+import com.db.webapp.model.*;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -26,9 +21,17 @@ public class UserRestController {
     @Autowired
     SecurityService uRepo;
     @Autowired
-    private V1gmrepo v1gmrepo;
+    private V1arepo v1arepo;
     @Autowired
-    private V1nmrepo v1nmrepo;
+    private V1mrepo v1mrepo;
+    @Autowired
+    private V2repo v2repo;
+    @Autowired
+    private V3repo v3repo;
+    @Autowired
+    private V5repo v5repo;
+    @Autowired
+    private V6repo v6repo;
 
     @PostMapping("register")
     public ResponseEntity<String> register(
@@ -92,12 +95,37 @@ public class UserRestController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-    @GetMapping("v1gm")
-    List<V1gm> datav1gm() {
-        return v1gmrepo.findAll();
+
+    @GetMapping("v1m")
+    List<V1m> datav1m() {
+        return v1mrepo.findAll();
     }
-    @GetMapping("v1nm")
-    List<V1nm> datav1nm() {
-        return v1nmrepo.findAll();
+    @GetMapping("v1a")
+    List<V1a> datav1a() {
+        return v1arepo.findAll();
     }
+    @GetMapping("v2")
+    List<V2> datav2() {
+        return v2repo.findAll();
+    }
+    @GetMapping("v3")
+    List<V3> datav3() {
+        return v3repo.findAll();
+    }
+    @GetMapping("v5")
+    List<V5> datav5() {
+        return v5repo.findAll();
+    }
+    @GetMapping("v6")
+    List<V6> datav6() {
+        return v6repo.findAll();
+    }
+
+
+
+
+
+
 }
+
+

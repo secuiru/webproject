@@ -10,9 +10,10 @@ import 'chartjs-adapter-luxon';
 
 
 
-const urlv1gm = 'http://localhost:8080/v1gm'
-const urlv1nm = 'http://localhost:8080/v1nm'
+const urlv1a = 'http://localhost:8080/v1a'
+const urlv1m = 'http://localhost:8080/v1m'
 
+const urlv2 = 'http://localhost:8080/v2'
 
 
 
@@ -20,53 +21,125 @@ const urlv1nm = 'http://localhost:8080/v1nm'
 
 export default function V1() {
 
-  const [v1gm, setv1gm] = useState([])
-  const [v1nm, setv1nm] = useState([])
+  const [v1a, setv1a] = useState([])
+  const [v1m, setv1m] = useState([])
+
+  const [v2, setv2] = useState([])
 
   useEffect(() => {
-    axios.get(urlv1gm)
+    axios.get(urlv1a)
       .then((response) => {
         console.log(response.data)
-        setv1gm(response.data)
+        setv1a(response.data)
       }).catch(error => {
-        alert(error.response.error)
+        alert("error from v1a")
       })
   }, [])
   useEffect(() => {
-    axios.get(urlv1nm)
+    axios.get(urlv1m)
       .then((response) => {
         console.log(response.data)
-        setv1nm(response.data)
+        setv1m(response.data)
+      }).catch(error => {
+        alert("error from v1m")
+      })
+  }, [])
+  useEffect(() => {
+    axios.get(urlv2)
+      .then((response) => {
+        console.log(response.data)
+        setv2(response.data)
+        console.log(v2)
       }).catch(error => {
         alert(error.response.error)
       })
   }, [])
 
   const v1 = {
-    labels: v1gm.map(d => d.time),
+    labels: v1a.map(d => d.time),
     datasets: [
       {
-        label: 'Time',
-        backgroundColor: 'rgba(75,192,0,1)',
-        borderColor: 'rgba(0,0,0,255)',
-        borderWidth: 1,
-        data: v1gm,
+        label: 'Global (NH+SH)/2 monthly',
+        backgroundColor: 'rgba(255,0,0,1)',
+        borderColor: 'rgba(255,0,0,1)',
+        borderWidth: 2,
+        data: v1m,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'gm'
         }
       },
       {
-        label: 'Time',
-        backgroundColor: 'rgba(75,192,0,1)',
-        borderColor: 'rgba(230,210,324,0)',
-        borderWidth: 1,
-        data: v1nm,
+        label: 'Northern hemisphere monthly',
+        backgroundColor: 'rgba(0,255,0,1)',
+        borderColor: 'rgba(0,255,0,1)',
+        borderWidth: 2,
+        data: v1m,
         spanGaps: false,
         parsing: {
           xAxisKey: 'time',
-          yAxisKey: 'anomalydeg'
+          yAxisKey: 'nm'
+        }
+      },
+      {
+        label: 'Southern hemisphere monthly',
+        backgroundColor: 'rgba(0,0,255,1)',
+        borderColor: 'rgba(0,0,255,1)',
+        borderWidth: 2,
+        data: v1m,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'sm'
+        }
+      },
+      {
+        label: 'Global (NH+SH)/2 yearly',
+        backgroundColor: 'rgba(255,0,0,1)',
+        borderColor: 'rgba(255,0,0,1)',
+        borderWidth: 2,
+        data: v1a,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'ga'
+        }
+      },
+      {
+        label: 'Northern hemisphere yearly',
+        backgroundColor: 'rgba(0,255,0,1)',
+        borderColor: 'rgba(0,255,0,1)',
+        borderWidth: 2,
+        data: v1a,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'na'
+        }
+      },
+      {
+        label: 'Southern hemisphere yearly',
+        backgroundColor: 'rgba(0,0,255,1)',
+        borderColor: 'rgba(0,0,255,1)',
+        borderWidth: 2,
+        data: v1a,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'sa'
+        }
+      },
+      {
+        label: '2000 year temps',
+        backgroundColor: 'rgba(255,255,255,1)',
+        borderColor: 'rgba(255,255,255,1)',
+        borderWidth: 2,
+        data: v2,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 't'
         }
       }
     ]
@@ -84,21 +157,18 @@ export default function V1() {
       },
     },
     scales: {
-      y: { min: -3, max: 3 },
-      x: { type: 'time' }
-    },
+
+      x: {type: 'time'}
+    } ,
   }
 
-
-
-
-
-
+  
 
 
   return (
     <div>
       <Line options={options} data={v1} />
+
     </div>
   )
 }
