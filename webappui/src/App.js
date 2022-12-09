@@ -6,7 +6,7 @@ import Home from './sites/Home';
 import Login from './sites/Login';
 import Register from './sites/Register';
 import Protected from './sites/Protected';
-import Delete from './sites/Delete';
+import Settings from './sites/Settings';
 import { useState } from "react";
 
 
@@ -27,7 +27,7 @@ function App() {
   if (userJWT != null) {
     authRoutes = <>
       <Route path='/protected' element={<Protected />} />
-      <Route path='/delete' element={<Delete logout={() => {
+      <Route path='/settings' element={<Settings logout={() => {
         setuserJWT(null);
         window.localStorage.removeItem('authData')
       }} />} />

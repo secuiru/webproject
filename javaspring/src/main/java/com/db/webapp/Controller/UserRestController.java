@@ -1,6 +1,8 @@
 package com.db.webapp.Controller;
 import java.util.Base64;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +34,12 @@ public class UserRestController {
     private V5repo v5repo;
     @Autowired
     private V6repo v6repo;
+    @Autowired
+    private V7repo v7repo;
+    @Autowired
+    private V7crepo v7crepo;
+    @Autowired
+    private V7trepo v7trepo;
     @Autowired
     private V8repo v8repo;
     @Autowired
@@ -124,9 +132,21 @@ public class UserRestController {
     List<V6> datav6() {
         return v6repo.findAll();
     }
+    @GetMapping("v7")
+    List<V7> datav7() {
+        return v7repo.findAll();
+    }
+    @GetMapping("v7c")
+    List<V7c> datav7c() {
+        return v7crepo.findAll();
+    }
+    @GetMapping("v7t")
+    List<V7t> datav7t() {
+        return v7trepo.findAll();
+    }
     @GetMapping("v8")
-    List<V8> datav8() {
-        return v8repo.findAll();
+    List<Map<String,Object>> datav8() {
+        return v8repo.getAllData();
     }
     @GetMapping("v9")
     List<V9> datav9() {

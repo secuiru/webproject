@@ -61,7 +61,7 @@ export default function V5() {
       },
       title: {
         display: true,
-        text: "Global historical surface temperature anomalies from January 1850 onwards",
+        text: "V5",
       },
     },
 

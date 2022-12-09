@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import { useEffect,useState } from 'react';
-import {Bar,Line,Pie} from "react-chartjs-2";
-import{Chart as ChartJS} from "chart.js/auto"
+import { useEffect, useState } from 'react';
+import { Bar, Line, Pie } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto"
 import { parse } from 'papaparse';
 import 'chartjs-adapter-luxon';
 
@@ -33,7 +33,7 @@ export default function V6() {
   }, [])
 
 
- 
+
   const v6chart = {
     labels: v6.map(d => d.time),
     datasets: [
@@ -51,19 +51,22 @@ export default function V6() {
       }
     ]
   }
-  
+
   const options = {
-    type:'line',
+    scales: {
+      x: { reverse: true }
+    },
+    type: 'line',
     responsive: true,
     plugins: {
       legend: {
         position: "top",
       },
+
       title: {
         display: true,
-        text: "Global historical surface temperature anomalies from January 1850 onwards",
+        text: "V6",
       },
-
     },
 
   }

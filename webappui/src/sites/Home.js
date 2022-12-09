@@ -12,7 +12,7 @@ return (
     Kotisivu
     <div>
       {props.userLoggedIn ?
-        <Link to="protected">Go to protected view</Link>
+        <Link to="protected">Go to charts</Link>
         :
         <>
           <Link to="register">Sign up</Link><br />

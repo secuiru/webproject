@@ -159,7 +159,7 @@ export default function V1() {
     scales: {
 
       x: {type: 'time'}
-    } ,
+    },
   }
 
   

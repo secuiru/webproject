@@ -68,9 +68,26 @@ export default function V9() {
       }
     ]
   }
+  const options = {
+    type:'line',
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "V9",
+      },
+    },
+    scales: {
+
+      
+    } ,
+  }
   return (
     <div>
-      <Pie  data={v9chart} />
+      <Pie options={options}  data={v9chart} />
 
 
     </div>

@@ -38,7 +38,7 @@ export default function Signup() {
     let signupUIControls = null;
     switch(signupRrocessState){
         case "idle":
-            signupUIControls =   <button type="submit">Signup</button>
+            signupUIControls = <button type="submit">Signup</button>
             break;
 
         case "processing":

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
-    @Id 
+    @Id
     private String username;
     private String email;
     private String password;
@@ -42,6 +42,14 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+/*     public String getSetting() {
+        return this.setting;
+    }
+
+    public void setSetting(String setting) {
+        this.setting = setting;
+    } */
 
     public User username(String username) {
         setUsername(username);

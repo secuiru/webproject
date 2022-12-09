@@ -29,9 +29,6 @@ export default function Login(props) {
             const receivedJWT = result.data;
             props.login(receivedJWT);
             //console.log(receivedJWT)
-
-
-
         }
         catch (error) {
             console.error(error);
