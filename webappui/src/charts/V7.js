@@ -11,9 +11,8 @@ import 'chartjs-adapter-luxon';
 
 
 
-const urlv7 = 'http://localhost:8080/v7'
-const urlv7c = 'http://localhost:8080/v7c'
-const urlv7t = 'http://localhost:8080/v7t'
+const urlv750 = 'http://localhost:8080/v7ppm'
+const urlv7ppm = 'http://localhost:8080/v750'
 
 
 
@@ -22,79 +21,58 @@ const urlv7t = 'http://localhost:8080/v7t'
 export default function V7() {
 
 
-  const [v7, setv7] = useState([])
-  const [v7c, setv7c] = useState([])
-  const [v7t, setv7t] = useState([])
+  const [v750, setv750] = useState([])
+  const [v7ppm, setv7ppm] = useState([])
 
   useEffect(() => {
-    axios.get(urlv7)
+    axios.get(urlv750)
       .then((response) => {
         console.log(response.data)
-        setv7(response.data)
+        setv750(response.data)
       }).catch(error => {
         alert(error.response.error)
       })
   }, [])
   useEffect(() => {
-    axios.get(urlv7c)
+    axios.get(urlv7ppm)
       .then((response) => {
         console.log(response.data)
-        setv7c(response.data)
-      }).catch(error => {
-        alert(error.response.error)
-      })
-  }, [])
-  useEffect(() => {
-    axios.get(urlv7t)
-      .then((response) => {
-        console.log(response.data)
-        setv7t(response.data)
+        setv7ppm(response.data)
       }).catch(error => {
         alert(error.response.error)
       })
   }, [])
   const v7chart = {
-    labels: v7c.map(d => d.timeyrbp),
+    labels: v7ppm.map(d => d.time),
 
     datasets: [
-      {
-        label: 'V7',
-        backgroundColor: 'rgba(255,255,255,1)',
-        borderColor: 'rgba(255,255,255,1)',
-        borderWidth: 2,
-        data: v7,
-        spanGaps: false,
-        parsing: {
-          xAxisKey: 'timekyrbp',
-          yAxisKey: 'fiftypercenct'
-        }
-      },
-      {
-        label: 'V7c',
-        backgroundColor: 'rgba(255,255,255,1)',
-        borderColor: 'rgba(255,255,255,1)',
-        borderWidth: 2,
-        data: v7c,
-        spanGaps: false,
-        parsing: {
-          xAxisKey: 'timeyrbp',
-          yAxisKey: 'onesdppm'
-        }
-      },
-      {
-        label: 'V7t',
-        backgroundColor: 'rgba(255,255,255,1)',
-        borderColor: 'rgba(255,255,255,1)',
-        borderWidth: 2,
-        data: v7t,
-        spanGaps: false,
-        parsing: {
-          xAxisKey: 'timeyrbp',
-          yAxisKey: 'antarctictermpuncertainty',
 
-        }
+      {
+        label: 'V7ppm',
+        backgroundColor: 'rgba(255,0,0,1)',
+        borderColor: 'rgba(255,0,0,1)',
+        borderWidth: 2,
+        data: v7ppm,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'fifty'
+        },
+        "yAxisID":'ppm'
       },
-
+      {
+        label: 'V750',
+        backgroundColor: 'rgba(0,0,255,1)',
+        borderColor: 'rgba(0,0,255,1)',
+        borderWidth: 2,
+        data: v750,
+        spanGaps: false,
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'ppm',
+        },
+        "yAxisID":'fifty'
+      }, 
     ]
   }
 
@@ -106,67 +84,36 @@ export default function V7() {
     },
     stacked: false,
     plugins: {},
-    legend: {
 
-
-    },
     scales: {
-        yAxes: [{
-          id: 'A',
-          type: 'linear',
-          position: 'left',
-        }, {
-          id: 'B',
-          type: 'linear',
-          position: 'right',
-          ticks: {
-            max: 1,
-            min: 0
-          }
-        }],
-      
-
-
-        x: {
-          type: "linear",
-          max: 2022,
-          title: {
-            display: true,
-            text: "time in years",
-          },
 
 
 
 
-          carbondioxideppm: {
-            position: "left",
-            display: true,
-
-          },
-
-          antarctictempchange: {
-            position: "right",
-            display: true,
-
-          },
+      x: {
+        type: "linear",
+        max: 2022,
+        title: {
+          display: true,
+          text: "time in years",
         },
-
-
-
+      ppm: {
+          type: 'linear',
+          display:true,
+          position: 'left',
+        },
+      fifty: {
+          type: 'linear',
+          display:true,
+          position: 'right',
+          
+        }
       },
-
-
-
-
-    }
-
-
-  return(
+    },
+  }
+  return (
     <div>
-{/*     <Line options={options} data={v7chart} /> */}
-    <h2>There was error getting the v7, please try again later</h2>
-
-
+      <Line options={options} data={v7chart} />
     </div >
   )
 }
