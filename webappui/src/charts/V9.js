@@ -86,7 +86,7 @@ export default function V9() {
     } ,
   }
   return (
-    <div>
+    <div style={{maxWidth:'1500px'}}>
       <Pie options={options}  data={v9chart} />
 
 

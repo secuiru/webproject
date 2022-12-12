@@ -59,15 +59,15 @@ export default function Signup() {
             <form onSubmit={handleSignupSubmit}>
                 <div>
                     Username <br />
-                    <input type="text" name="username" />
+                    <input type="text" required name="username"  minLength="2" />
                 </div>
                 <div>
                     Password <br />
-                    <input type="text" name="password" />
+                    <input type="text" required name="password"  minLength="2" />
                 </div>
                 <div>
                     Email <br />
-                    <input type="text" name="email" />
+                    <input type="text" required name="email"  minLength="2" />
                 </div>
                 <div>
                     {signupUIControls}

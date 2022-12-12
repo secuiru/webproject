@@ -9,7 +9,6 @@ export default function Home(props) {
 
 return (
   <div>
-    Kotisivu
     <div>
       {props.userLoggedIn ?
         <Link to="protected">Go to charts</Link>

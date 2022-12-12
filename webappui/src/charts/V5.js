@@ -69,7 +69,7 @@ export default function V5() {
 
 
   return (
-    <div>
+    <div style={{maxWidth:'1500px'}}>
       <Line options={options} data={v5chart} />
 
 

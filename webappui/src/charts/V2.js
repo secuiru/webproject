@@ -67,7 +67,7 @@ export default function V2() {
 
 
   return (
-    <div>
+    <div style={{maxWidth:'1500px'}}>
       <Line options={options} data={v2chart} />
 
 

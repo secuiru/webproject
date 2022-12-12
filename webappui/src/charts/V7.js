@@ -58,7 +58,7 @@ export default function V7() {
           xAxisKey: 'time',
           yAxisKey: 'fifty'
         },
-        "yAxisID":'ppm'
+        "yAxisID":'y'
       },
       {
         label: 'V750',
@@ -71,7 +71,7 @@ export default function V7() {
           xAxisKey: 'time',
           yAxisKey: 'ppm',
         },
-        "yAxisID":'fifty'
+        "yAxisID":'y1'
       }, 
     ]
   }
@@ -80,16 +80,13 @@ export default function V7() {
     type: 'line',
     responsive: true,
     interaction: {
+      mode:'index',
       intersect: false,
     },
     stacked: false,
     plugins: {},
 
     scales: {
-
-
-
-
       x: {
         type: "linear",
         max: 2022,
@@ -97,22 +94,31 @@ export default function V7() {
           display: true,
           text: "time in years",
         },
-      ppm: {
-          type: 'linear',
-          display:true,
-          position: 'left',
         },
-      fifty: {
-          type: 'linear',
-          display:true,
-          position: 'right',
-          
-        }
+      y1: {
+        type: 'linear',
+        title: {
+        display: true,
+        position: 'left',
+        text:'CO2 ppm'
+        },
       },
-    },
+      y: {
+        type: 'linear',
+        position: 'right',
+        title: {
+        display: true,
+        text:'Temperature anomaly'
+        },
+        // grid line settings
+        grid: {
+          drawOnChartArea: false, // only want the grid lines for one axis to show up
+        },
+      },
+    }
   }
   return (
-    <div>
+    <div style={{maxWidth:'1500px'}}>
       <Line options={options} data={v7chart} />
     </div >
   )

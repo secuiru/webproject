@@ -1,4 +1,5 @@
 package com.db.webapp.Controller;
+
 import java.util.Base64;
 import java.util.List;
 import java.util.Map;
@@ -48,8 +49,15 @@ public class UserRestController {
             @RequestParam String username,
             @RequestParam String password,
             @RequestParam String email) {
-        User u = uRepo.register(username, email, password);
-        return new ResponseEntity<>(u.getUsername(), HttpStatus.OK);
+
+        if (username != null && password != null) {
+            User u = uRepo.register(username, email, password);
+            return new ResponseEntity<>(u.getUsername(), HttpStatus.OK);
+        }
+        else
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+
     }
 
     @PostMapping("login")
@@ -61,8 +69,7 @@ public class UserRestController {
         if (token == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-
-        return new ResponseEntity<>(token, HttpStatus.OK);
+            return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
     @PostMapping("delete")
@@ -105,49 +112,54 @@ public class UserRestController {
         return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
-
     @GetMapping("v1m")
     List<V1m> datav1m() {
         return v1mrepo.findAll();
     }
+
     @GetMapping("v1a")
     List<V1a> datav1a() {
         return v1arepo.findAll();
     }
+
     @GetMapping("v2")
     List<V2> datav2() {
         return v2repo.findAll();
     }
+
     @GetMapping("v3")
     List<V3> datav3() {
         return v3repo.findAll();
     }
+
     @GetMapping("v5")
     List<V5> datav5() {
         return v5repo.findAll();
     }
+
     @GetMapping("v6")
     List<V6> datav6() {
         return v6repo.findAll();
     }
+
     @GetMapping("v7ppm")
     List<V7ppm> datav7ppm() {
         return v7ppmrepo.findAll();
     }
+
     @GetMapping("v750")
     List<V750> datav750() {
         return v750repo.findAll();
     }
 
     @GetMapping("v8")
-    List<Map<String,Object>> datav8() {
+    List<Map<String, Object>> datav8() {
         return v8repo.getAllData();
     }
+
     @GetMapping("v9")
     List<V9> datav9() {
         return v9repo.findAll();
     }
 
 }
-
-

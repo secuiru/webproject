@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Constants from '../Constants.json'
-
 export default function Login(props) {
 
 
@@ -35,6 +34,7 @@ export default function Login(props) {
 
         }
 
+        
     }
 
     return (
@@ -43,15 +43,16 @@ export default function Login(props) {
             <form onSubmit={handleSignupSubmit}>
                 <div>
                     Username <br />
-                    <input type="text" name="username" />
+                    <input type="text" required name="username"  minLength="2" />
                 </div>
                 <div>
                     Password <br />
-                    <input type="text" name="password" />
+                    <input type="text" required name="password" minLength="2" />
                 </div>
                 <div>
                 <button type="submit">Login</button>
                 </div>
+
 
             </form>
         </div>

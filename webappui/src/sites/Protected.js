@@ -1,4 +1,5 @@
 import 'chartjs-adapter-luxon';
+import { useState } from 'react';
 import V1 from '../charts/V1';
 import V3 from '../charts/V3';
 import V5 from '../charts/V5';
@@ -21,13 +22,13 @@ export default function Protected(props) {
     <div>
 
 
-{/*       <V1 />
+      <V1 />
       <V3 />
       <V5 />
-      <V6 /> */}
+      <V6 /> 
       <V7 />
-{/*       <V8 />
-      <V9 /> */}
+      <V8 />
+      <V9 /> 
 
 
     </div>

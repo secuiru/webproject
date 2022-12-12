@@ -87,7 +87,7 @@ export default function V3() {
 
 return (
     <div>
-      <div>
+      <div style={{maxWidth:'1500px'}}>
       <Line options={options} data={v3} />
       </div>
       <p> </p>

@@ -166,7 +166,7 @@ export default function V1() {
 
 
   return (
-    <div>
+    <div style={{maxWidth:'1500px'}}>
       <Line options={options} data={v1} />
 
     </div>

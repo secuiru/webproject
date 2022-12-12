@@ -3152,7 +3152,7 @@ export default function V8() {
 
 
   return (
-    <div>
+    <div style={{maxWidth:'1500px'}}>
       <Line options={options} data={v8chart} />
 
 
