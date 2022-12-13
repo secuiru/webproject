@@ -19,6 +19,17 @@ body
   background-color: rgb(0, 0, 0);
   text-align: center;
 }
+.navbar
+{
+  
+}
+.dropdown-menu
+{
+  background-color: #060007;
+
+  color: rgba(251, 251, 252, 0.607)
+  
+}
 .protected
 {
   text-align: center;
@@ -67,7 +78,7 @@ a:hover
 
 Footer {
 
-position: fixed;
+position: sticky;
 height: 50px;
 background-color: rgb(14, 14, 17);
 bottom: 0px;
