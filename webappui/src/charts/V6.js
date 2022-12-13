@@ -57,6 +57,8 @@ export default function V6() {
       x: { reverse: true }
     },
     type: 'line',
+    pointRadius: 1,
+pointHoverRadius: 1,
     responsive: true,
     plugins: {
       legend: {
