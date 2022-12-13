@@ -78,9 +78,9 @@ pointHoverRadius: 1,
     <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v6chart} />
       <p> Ice composition from Antarctica over  800 thousand years </p>
-      <a href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"> Dataset</a>
-      <a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"> More info</a>
-
+      <p > <a href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"> Dataset</a> </p>
+      <p ><a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"> More info</a> </p>
+ 
 
     </div>
   )

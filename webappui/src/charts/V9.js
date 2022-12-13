@@ -85,8 +85,8 @@ export default function V9() {
     <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Doughnut options={options}  data={v9chart} />
       <p> Global emissions by sectors</p>
-      <a href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"> Dataset</a>
-      <a href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"> More info</a>
+      <p ><a href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"> Dataset</a> </p>
+      <p ><a href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"> More info</a> </p>
 
     </div>
   )

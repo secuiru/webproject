@@ -77,8 +77,8 @@ pointHoverRadius: 1,
     <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v5chart} />
       <p> Carbon dioxide levels from the ice from Vostok. from years 413085BC-2342BC</p>
-      <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"> Datasets</a>
-      <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"> More info</a>
+      <p >  <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"> Datasets</a> </p>
+      <p > <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"> More info</a> </p>
 
     </div>
   )
