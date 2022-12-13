@@ -48,7 +48,7 @@ export default function V7() {
     datasets: [
 
       {
-        label: 'V7ppm',
+        label: 'CO2 ppm',
         backgroundColor: 'rgba(255,0,0,1)',
         borderColor: 'rgba(255,0,0,1)',
         borderWidth: 2,
@@ -61,7 +61,7 @@ export default function V7() {
         "yAxisID":'y'
       },
       {
-        label: 'V750',
+        label: 'Temperature',
         backgroundColor: 'rgba(0,0,255,1)',
         borderColor: 'rgba(0,0,255,1)',
         borderWidth: 2,
@@ -94,7 +94,7 @@ pointHoverRadius: 1,
         max: 2022,
         title: {
           display: true,
-          text: "time in years",
+          text: "Time in years",
         },
         },
       y1: {
@@ -120,8 +120,12 @@ pointHoverRadius: 1,
     }
   }
   return (
-    <div style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v7chart} />
+      <p> Evolution of global temperature over the past two million years </p>
+      <a href="http://carolynsnyder.com/publications.php">Dataset</a>
+      <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"> More info</a>
+
     </div >
   )
 }

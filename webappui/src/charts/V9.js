@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useEffect,useState } from 'react';
-import {Bar,Line,Pie} from "react-chartjs-2";
+import {Bar,Line,Doughnut} from "react-chartjs-2";
 import { parse } from 'papaparse';
 import 'chartjs-adapter-luxon';
 import{Chart as ChartJS} from "chart.js/auto"
@@ -77,18 +77,16 @@ export default function V9() {
       },
       title: {
         display: true,
-        text: "V9",
+        text: "Global emissions",
       },
     },
-    scales: {
-
-      
-    } ,
   }
   return (
-    <div style={{maxWidth:'1500px'}}>
-      <Pie options={options}  data={v9chart} />
-
+    <div class="linkki1" style={{maxWidth:'1500px'}}>
+      <Doughnut options={options}  data={v9chart} />
+      <p> Global emissions by sectors</p>
+      <a href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"> Dataset</a>
+      <a href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"> More info</a>
 
     </div>
   )

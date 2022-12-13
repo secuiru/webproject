@@ -38,7 +38,7 @@ export default function V5() {
     labels: v5.map(d => d.yrbp),
     datasets: [
       {
-        label: 'V5',
+        label: 'Carbon dioxide from Vostok ice core',
         backgroundColor: 'rgba(255,255,255,1)',
         borderColor: 'rgba(255,255,255,1)',
         borderWidth: 2,
@@ -54,6 +54,9 @@ export default function V5() {
   
   const options = {
     type:'line',
+    scales: {
+      x: { reverse: true }
+    },
     pointRadius: 1,
 pointHoverRadius: 1,
     responsive: true,
@@ -63,7 +66,7 @@ pointHoverRadius: 1,
       },
       title: {
         display: true,
-        text: "V5",
+        text: "Vostok Ice Core CO2 measurements",
       },
     },
 
@@ -71,9 +74,11 @@ pointHoverRadius: 1,
 
 
   return (
-    <div style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v5chart} />
-
+      <p> Carbon dioxide levels from the ice from Vostok. from years 413085BC-2342BC</p>
+      <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"> Datasets</a>
+      <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"> More info</a>
 
     </div>
   )
