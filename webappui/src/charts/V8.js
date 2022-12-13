@@ -3152,9 +3152,11 @@ export default function V8() {
 
 
   return (
-    <div style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v8chart} />
-
+      <p> CO2 emissions by country</p>
+      <a href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"> Dataset</a>
+      <a href="https://essd.copernicus.org/articles/14/1917/2022/"> More info</a>
 
     </div>
   )

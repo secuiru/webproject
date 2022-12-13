@@ -172,6 +172,13 @@ margin-right: 28vh;
 margin-top: auto;
 margin-bottom: 10vh;
 }
+a:nth-child(2)
+{
+  all:unset;
+  font-size: 24px;
+
+}
+
 .webapp:hover
 {
 background: #f1ffda;
@@ -182,4 +189,12 @@ box-shadow: 0 0 5px #a6ff00,
             0 0 50px #a6ff00,
             0 0 200px #a6ff00;
             overflow: hidden;
+}
+.linkki1 a{
+  all: unset;
+  background-color:black;
+  text-decoration: none;
+  font: 1.4em Helvetica, arial, sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
 }

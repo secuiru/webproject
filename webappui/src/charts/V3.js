@@ -89,10 +89,13 @@ pointHoverRadius: 1,
 
 return (
     <div>
-      <div style={{maxWidth:'1500px'}}>
+      <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v3} />
+      <p > Rise of C02 levels at  Mauna Loa from 1958 to 2022</p>
+      <a href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"> How the data was measured</a>
+      <a href="https://gml.noaa.gov/ccgg/trends/"> Data source</a>
+      
       </div>
-      <p> </p>
     </div>
 
   )

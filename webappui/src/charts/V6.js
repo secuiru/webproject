@@ -38,7 +38,7 @@ export default function V6() {
     labels: v6.map(d => d.time),
     datasets: [
       {
-        label: 'V6',
+        label: 'CO2',
         backgroundColor: 'rgba(255,255,255,1)',
         borderColor: 'rgba(255,255,255,1)',
         borderWidth: 2,
@@ -67,7 +67,7 @@ pointHoverRadius: 1,
 
       title: {
         display: true,
-        text: "V6",
+        text: "Ice core 800k year composite study CO2 measurements",
       },
     },
 
@@ -75,8 +75,11 @@ pointHoverRadius: 1,
 
 
   return (
-    <div style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v6chart} />
+      <p> Ice composition from Antarctica over  800 thousand years </p>
+      <a href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"> Dataset</a>
+      <a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"> More info</a>
 
 
     </div>

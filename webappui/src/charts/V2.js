@@ -69,8 +69,8 @@ pointHoverRadius: 1,
 
 
   return (
-    <div style={{maxWidth:'1500px'}}>
-      <Line options={options} data={v2chart} />
+    <div class="linkki1" style={{maxWidth:'1500px'}}>
+      <Line class="linkki1"  options={options} data={v2chart} />
 
 
     </div>
