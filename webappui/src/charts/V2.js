@@ -52,6 +52,8 @@ export default function V2() {
   
   const options = {
     type:'line',
+    pointRadius: 1,
+pointHoverRadius: 1,
     responsive: true,
     plugins: {
       legend: {

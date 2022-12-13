@@ -78,6 +78,8 @@ export default function V7() {
 
   const options = {
     type: 'line',
+    pointRadius: 1,
+pointHoverRadius: 1,
     responsive: true,
     interaction: {
       mode:'index',

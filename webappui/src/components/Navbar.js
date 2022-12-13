@@ -26,13 +26,13 @@ export default function Navbar() {
                             </a>
                             <ul class="dropdown-menu">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/protected">Temp&co2</Link>
+                                    <Link className="nav-link" to="/protected2">Temp&co2</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/protected1">Emissions</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/protected2">All charts</Link>
+                                    <Link className="nav-link" to="/protected">All charts</Link>
                                 </li>
                             </ul>
                         </li>
