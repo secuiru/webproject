@@ -123,8 +123,8 @@ pointHoverRadius: 1,
     <div class="linkki1" style={{maxWidth:'1500px'}}>
       <Line options={options} data={v7chart} />
       <p> Evolution of global temperature over the past two million years </p>
-      <a href="http://carolynsnyder.com/publications.php">Dataset</a>
-      <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"> More info</a>
+      <p > <a href="http://carolynsnyder.com/publications.php">Dataset</a> </p>
+      <p ><a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"> More info</a> </p>
 
     </div >
   )
