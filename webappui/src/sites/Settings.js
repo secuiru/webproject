@@ -32,7 +32,7 @@ export default function Delete(props) {
     }
     return (
         <div>
-            <button onClick={props.logout}>logout</button>
+            <div class="logout"><button onClick={props.logout}>logout</button></div>
             <h3>Provide username and password to delete your account</h3>
             <form onSubmit={handleDelSubmit}>
                 <div>
@@ -44,7 +44,7 @@ export default function Delete(props) {
                     <input type="text" required name="password" minLength="2" />
                 </div>
                 <div class="deleteacc">
-                    <button type="submit" style={{ color: 'red' }}>Delete account</button>
+                    <button type="submit">Delete account</button>
                 </div>
             </form>
         </div>

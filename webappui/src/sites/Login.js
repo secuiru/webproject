@@ -41,7 +41,7 @@ export default function Login(props) {
     let loginUIControls = null;
     switch (loginProcessState) {
         case "idle":
-            loginUIControls = <button type="submit">Login</button>
+            loginUIControls = <div class="logout"><button type="submit">Login</button></div>
             break;
 
         case "processing":

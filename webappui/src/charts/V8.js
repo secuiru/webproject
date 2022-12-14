@@ -3141,7 +3141,7 @@ export default function V8() {
       },
       title: {
         display: true,
-        text: "V8",
+        text: "CO2 emissions by country",
       },
     },
     scales: {
@@ -3152,7 +3152,7 @@ export default function V8() {
 
 
   return (
-    <div class="linkki1" style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{ maxWidth: '1500px' }}>
       <Line options={options} data={v8chart} />
       <p> CO2 emissions by country</p>
       <p ><a href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"> Dataset</a> </p>

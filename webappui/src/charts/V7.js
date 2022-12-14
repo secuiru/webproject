@@ -105,6 +105,7 @@ export default function V7() {
         "yAxisID": 'y1'
 
       },
+
     ]
   }
 
@@ -138,6 +139,10 @@ export default function V7() {
     stacked: false,
     plugins: {
       tooltip,
+      title: {
+        display: true,
+        text: "Evolution of global temperature",
+      },
     },
 
     scales: {
@@ -172,6 +177,8 @@ export default function V7() {
       },
     }
   }
+
+
   return (
     <div class="linkki1" style={{ maxWidth: '1500px' }}>
       <Line options={options} data={v7chart} />

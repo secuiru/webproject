@@ -9,13 +9,13 @@ export default function Home(props) {
 
   return (
     <div>
-      <div>
+      <div class="container">
         {props.userLoggedIn ?
-          <Link to="protected">Go to charts</Link>
+          <div class="btn"><a href="protected">Go to charts</a></div>
           :
           <>
-            <Link to="register">Sign up</Link><br />
-            <Link to="login">Login</Link>
+            <div class="btn"><a href="register">Sign up</a></div>
+            <div class="btn"><a href="login">login</a></div>
           </>
 
         }
