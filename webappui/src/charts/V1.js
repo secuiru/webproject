@@ -12,7 +12,6 @@ import 'chartjs-adapter-luxon';
 
 const urlv1a = 'http://localhost:8080/v1a'
 const urlv1m = 'http://localhost:8080/v1m'
-
 const urlv2 = 'http://localhost:8080/v2'
 
 
@@ -172,7 +171,7 @@ pointHoverRadius: 1,
       <Line options={options} data={v1} />
       <p class="linkki1"> Northern Hemisphere temperature reconstruction for the past 2,000 years by combining low-resolution proxies with tree-ring data, using a wavelet transform technique to achieve timescale-dependent processing of the data.
       </p>
-      <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"> Data source</a>
+      <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"> Dataset</a>
     </div>
   )
 }

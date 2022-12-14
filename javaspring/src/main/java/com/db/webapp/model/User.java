@@ -43,13 +43,6 @@ public class User {
         this.password = password;
     }
 
-/*     public String getSetting() {
-        return this.setting;
-    }
-
-    public void setSetting(String setting) {
-        this.setting = setting;
-    } */
 
     public User username(String username) {
         setUsername(username);

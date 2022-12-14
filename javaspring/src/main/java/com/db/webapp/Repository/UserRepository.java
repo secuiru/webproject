@@ -13,21 +13,5 @@ public interface UserRepository extends JpaRepository<User, String> {
     List<String> getdata();
 
 
-/*      @Query("select u from User u where u.name=?1")
-    List<User> findByName(String name);
 
-
-
-
-    @Query(value="select name from user", nativeQuery = true)
-    List<String> getName();
- */
-
-
-
-
-
- 
-    //@Modifying//jos del tai update
-    //@Query(value="insert")
 }

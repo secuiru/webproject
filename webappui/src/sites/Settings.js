@@ -32,14 +32,6 @@ export default function Delete(props) {
     }
     return (
         <div>
- {/*            <p>Select</p>
-            <div>
-                <select name="selectList" id="selectList">
-                    <option value="n1">N1</option>
-                    <option value="n2">N2</option>
-                    <option value="n3">Show all</option>
-                </select>
-            </div> */}
             <button onClick={props.logout}>logout</button>
             <h3>Provide username and password to delete your account</h3>
             <form onSubmit={handleDelSubmit}>
