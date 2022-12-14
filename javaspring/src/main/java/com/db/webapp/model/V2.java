@@ -16,9 +16,6 @@ public class V2 {
     @Column(name = "col2")
     private String t;
 
-
-
-
     public V2() {
     }
 
@@ -52,8 +49,5 @@ public class V2 {
         setT(t);
         return this;
     }
-
-
-    
 
 }

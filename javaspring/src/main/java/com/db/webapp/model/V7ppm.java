@@ -16,9 +16,8 @@ public class V7ppm {
     @Column(name = "ppm")
     private String ppm;
 
-        public V7ppm() {
-        }
-    
+    public V7ppm() {
+    }
 
     public V7ppm(String time, String ppm) {
         this.time = time;
@@ -51,6 +50,4 @@ public class V7ppm {
         return this;
     }
 
-    
 }
-    

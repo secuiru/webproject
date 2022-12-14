@@ -41,10 +41,10 @@ export default function Delete(props) {
                 </div>
                 <div>
                     Password <br />
-                    <input type="text" required name="password"  minLength="2" />
+                    <input type="text" required name="password" minLength="2" />
                 </div>
-                <div>
-                    <button type="submit">Delete account</button>
+                <div class="deleteacc">
+                    <button type="submit" style={{ color: 'red' }}>Delete account</button>
                 </div>
             </form>
         </div>

@@ -16,12 +16,8 @@ public class V5 {
     @Column(name = "col2")
     private String co2;
 
-
-
-
     public V5() {
     }
-
 
     public V5(String yrbp, String co2) {
         this.yrbp = yrbp;

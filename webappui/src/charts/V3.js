@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import { useEffect,useState } from 'react';
-import {Bar,Line,Pie} from "react-chartjs-2";
-import{Chart as ChartJS} from "chart.js/auto"
+import { useEffect, useState } from 'react';
+import { Bar, Line, Pie } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto"
 import { parse } from 'papaparse';
 import 'chartjs-adapter-luxon';
 
@@ -23,13 +23,13 @@ export default function V3() {
         alert(error.response.error)
       })
   }, [])
- 
+
 
   const v3 = {
     labels: maunaloaco2.map(d => d.year),
 
     datasets: [
-       {
+      {
         label: 'yearly',
         backgroundColor: 'rgba(75,192,0,1)',
         borderColor: 'rgba(75,192,0,1)',
@@ -52,7 +52,7 @@ export default function V3() {
           yAxisKey: 'average'
         }
       }, */
-       {
+      {
         label: 'deseasonalized',
         backgroundColor: 'rgba(75,192,255,255)',
         borderColor: 'rgba(75,192,255,255)',
@@ -63,13 +63,13 @@ export default function V3() {
           xAxisKey: 'year',
           yAxisKey: 'deseasonalized'
         }
-      }, 
-    ] 
+      },
+    ]
   }
   const options = {
-    type:'line',
+    type: 'line',
     pointRadius: 1,
-pointHoverRadius: 1,
+    pointHoverRadius: 1,
     responsive: true,
     plugins: {
       legend: {
@@ -80,21 +80,21 @@ pointHoverRadius: 1,
         text: "Corrected seasonal CO2 levels in mauna loa ",
       },
     },
- scales: {
+    scales: {
 
-      x: {type: 'time'}
-    } ,
-}
+      x: { type: 'time' }
+    },
+  }
 
 
-return (
+  return (
     <div>
-      <div class="linkki1" style={{maxWidth:'1500px'}}>
-      <Line options={options} data={v3} />
-      <p > Rise of C02 levels at  Mauna Loa from 1958 to 2022</p>
-      <p > <a href="https://gml.noaa.gov/ccgg/trends/"> Dataset</a> </p>
-      <p > <a href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"> How the data was measured</a> </p>
-      
+      <div class="linkki1" style={{ maxWidth: '1500px' }}>
+        <Line options={options} data={v3} />
+        <p > Rise of C02 levels at  Mauna Loa from 1958 to 2022</p>
+        <p > <a href="https://gml.noaa.gov/ccgg/trends/"> Dataset</a> </p>
+        <p > <a href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"> How the data was measured</a> </p>
+
       </div>
     </div>
 

@@ -5,7 +5,7 @@ import Constants from '../Constants.json'
 
 export default function Signup() {
     var searchURL;
-    const [ signupRrocessState, SetSignupProcessState] = useState("idle")
+    const [signupProcessState, SetSignupProcessState] = useState("idle")
 
 
 
@@ -13,43 +13,43 @@ export default function Signup() {
 
     const navigate = useNavigate();
 
-    const handleSignupSubmit = async (event) =>{
+    const handleSignupSubmit = async (event) => {
         event.preventDefault();
 
         SetSignupProcessState("processing");
 
 
 
-        searchURL = Constants.API_ADDRESS+ "register?username=" + event.target.username.value + "&password=" + event.target.password.value + "&email=" + event.target.email.value
+        searchURL = Constants.API_ADDRESS + "register?username=" + event.target.username.value + "&password=" + event.target.password.value + "&email=" + event.target.email.value
 
-       try{
-         const result =  await axios.post(searchURL);
-        console.log(result);
+        try {
+            const result = await axios.post(searchURL);
+            console.log(result);
             SetSignupProcessState("signupSuccess")
-             navigate('/login', {replace: true});
+            navigate('/login', { replace: true });
 
-       }
-       catch (error){
-        console.error(error);
-        SetSignupProcessState("signupFailure")
-       }
+        }
+        catch (error) {
+            console.error(error);
+            SetSignupProcessState("signupFailure")
+        }
 
     }
     let signupUIControls = null;
-    switch(signupRrocessState){
+    switch (signupProcessState) {
         case "idle":
             signupUIControls = <button type="submit">Signup</button>
             break;
 
         case "processing":
-                signupUIControls = <span> Processing....</span>
-                break;
+            signupUIControls = <span> Processing....</span>
+            break;
         case "signupSuccess":
-            signupUIControls = <span style={{color:"green"}  } >signup success</span>
+            signupUIControls = <span style={{ color: "green" }} >signup success</span>
             break;
         case "signupFailure":
-        signupUIControls = <span style={{color:"red"}}>Error</span>
-        break;
+            signupUIControls = <span style={{ color: "red" }}>Error</span>
+            break;
     }
 
 
@@ -59,15 +59,15 @@ export default function Signup() {
             <form onSubmit={handleSignupSubmit}>
                 <div>
                     Username <br />
-                    <input type="text" required name="username"  minLength="2" />
+                    <input type="text" required name="username" minLength="2" />
                 </div>
                 <div>
                     Password <br />
-                    <input type="text" required name="password"  minLength="2" />
+                    <input type="text" required name="password" minLength="2" />
                 </div>
                 <div>
                     Email <br />
-                    <input type="text" required name="email"  minLength="2" />
+                    <input type="text" required name="email" minLength="2" />
                 </div>
                 <div>
                     {signupUIControls}

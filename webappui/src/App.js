@@ -34,7 +34,7 @@ function App() {
         setuserJWT(null);
         window.localStorage.removeItem('authData')
       }} />} />
-     </> 
+    </>
   }
 
   return (

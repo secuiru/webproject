@@ -25,10 +25,10 @@ export default function Protected(props) {
       <V1 />
       <V3 />
       <V5 />
-      <V6 /> 
+      <V6 />
       <V7 />
       <V8 />
-      <V9 /> 
+      <V9 />
 
 
     </div>

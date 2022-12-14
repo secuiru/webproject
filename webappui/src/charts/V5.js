@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import { useEffect,useState } from 'react';
-import {Bar,Line,Pie} from "react-chartjs-2";
-import{Chart as ChartJS} from "chart.js/auto"
+import { useEffect, useState } from 'react';
+import { Bar, Line, Pie } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto"
 import { parse } from 'papaparse';
 import 'chartjs-adapter-luxon';
 
@@ -33,7 +33,7 @@ export default function V5() {
   }, [])
 
 
- 
+
   const v5chart = {
     labels: v5.map(d => d.yrbp),
     datasets: [
@@ -51,14 +51,14 @@ export default function V5() {
       }
     ]
   }
-  
+
   const options = {
-    type:'line',
+    type: 'line',
     scales: {
       x: { reverse: true }
     },
     pointRadius: 1,
-pointHoverRadius: 1,
+    pointHoverRadius: 1,
     responsive: true,
     plugins: {
       legend: {
@@ -74,7 +74,7 @@ pointHoverRadius: 1,
 
 
   return (
-    <div class="linkki1" style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{ maxWidth: '1500px' }}>
       <Line options={options} data={v5chart} />
       <p> Carbon dioxide levels from the ice from Vostok. from years 413085BC-2342BC</p>
       <p >  <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"> Datasets</a> </p>

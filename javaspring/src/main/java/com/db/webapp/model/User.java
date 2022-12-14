@@ -43,7 +43,6 @@ public class User {
         this.password = password;
     }
 
-
     public User username(String username) {
         setUsername(username);
         return this;

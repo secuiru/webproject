@@ -23,7 +23,7 @@ export default function Protected2(props) {
       <V1 />
       <V3 />
       <V5 />
-      <V6 /> 
+      <V6 />
       <V7 />
     </div>
   )

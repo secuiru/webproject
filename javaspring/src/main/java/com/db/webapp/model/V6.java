@@ -16,9 +16,6 @@ public class V6 {
     @Column(name = "col2")
     private String co2;
 
-
-
-
     public V6() {
     }
 
@@ -52,6 +49,5 @@ public class V6 {
         setCo2(co2);
         return this;
     }
-    
 
 }

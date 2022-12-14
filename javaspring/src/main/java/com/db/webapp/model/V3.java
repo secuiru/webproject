@@ -6,38 +6,35 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name="v3")
+@Table(name = "v3")
 public class V3 {
 
-
-
     @Id
-    @Column(name ="col1")
+    @Column(name = "col1")
     private String year;
-    @Column(name ="col2")
+    @Column(name = "col2")
     private String month;
-    @Column(name ="col3")
+    @Column(name = "col3")
     private String decimaldate;
-    @Column(name ="col4")
+    @Column(name = "col4")
     private String average;
-    @Column(name ="col5")
+    @Column(name = "col5")
     private String deseasonalized;
-    @Column(name ="col6")
+    @Column(name = "col6")
     private String ndays;
-    @Column(name ="col7")
+    @Column(name = "col7")
     private String sdev;
-    @Column(name ="col8")
+    @Column(name = "col8")
     private String unc;
-    @Column(name ="col9")
+    @Column(name = "col9")
     private String yearmonth;
 
-    public V3(){}
+    public V3() {
+    }
 
-
-    public V3(String year, String month, String decimaldate, String average, String deseasonalized, String ndays, String sdev, String unc, String yearmonth) {
+    public V3(String year, String month, String decimaldate, String average, String deseasonalized, String ndays,
+            String sdev, String unc, String yearmonth) {
         this.year = year;
         this.month = month;
         this.decimaldate = decimaldate;
@@ -48,8 +45,6 @@ public class V3 {
         this.unc = unc;
         this.yearmonth = yearmonth;
     }
-
- 
 
     public String getYear() {
         return this.year;
@@ -167,7 +162,5 @@ public class V3 {
         setYearmonth(yearmonth);
         return this;
     }
-
-
 
 }

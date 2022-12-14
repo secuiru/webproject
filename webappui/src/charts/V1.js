@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import { useEffect,useState } from 'react';
-import {Bar,Line,Pie} from "react-chartjs-2";
-import{Chart as ChartJS} from "chart.js/auto"
+import { useEffect, useState } from 'react';
+import { Bar, Line, Pie } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto"
 import { parse } from 'papaparse';
 import 'chartjs-adapter-luxon';
 
@@ -144,9 +144,9 @@ export default function V1() {
     ]
   }
   const options = {
-    type:'line',
+    type: 'line',
     pointRadius: 1,
-pointHoverRadius: 1,
+    pointHoverRadius: 1,
     responsive: true,
     plugins: {
       legend: {
@@ -159,15 +159,15 @@ pointHoverRadius: 1,
     },
     scales: {
 
-      x: {type: 'time'}
+      x: { type: 'time' }
     },
   }
 
-  
+
 
 
   return (
-    <div class="linkki1" style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{ maxWidth: '1500px' }}>
       <Line options={options} data={v1} />
       <p class="linkki1"> Northern Hemisphere temperature reconstruction for the past 2,000 years by combining low-resolution proxies with tree-ring data, using a wavelet transform technique to achieve timescale-dependent processing of the data.
       </p>

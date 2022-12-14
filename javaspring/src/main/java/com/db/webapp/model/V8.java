@@ -8,17 +8,13 @@ import javax.persistence.Table;
 @Table(name = "v8")
 public class V8 {
 
-
     @Id
 
     String key;
     java.io.Serializable values;
 
-
-
     public V8() {
     }
-
 
     public V8(String key, java.io.Serializable values) {
         this.key = key;
@@ -54,11 +50,9 @@ public class V8 {
     @Override
     public String toString() {
         return "{" +
-            " key='" + getKey() + "'" +
-            ", values='" + getValues() + "'" +
-            "}";
+                " key='" + getKey() + "'" +
+                ", values='" + getValues() + "'" +
+                "}";
     }
-
-
 
 }

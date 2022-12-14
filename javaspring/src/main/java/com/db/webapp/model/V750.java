@@ -16,10 +16,8 @@ public class V750 {
     @Column(name = "fifty")
     private String fifty;
 
-        public V750() {
-        }
-    
-   
+    public V750() {
+    }
 
     public V750(String time, String fifty) {
         this.time = time;
@@ -51,5 +49,5 @@ public class V750 {
         setFifty(fifty);
         return this;
     }
-            
+
 }

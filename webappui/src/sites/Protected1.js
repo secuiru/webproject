@@ -21,7 +21,7 @@ export default function Protected1(props) {
   return (
     <div>
       <V8 />
-      <V9 /> 
+      <V9 />
     </div>
   )
 }

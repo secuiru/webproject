@@ -19,7 +19,6 @@ public class V9 {
     public V9() {
     }
 
-
     public V9(String name, String values) {
         this.name = name;
         this.values = values;
@@ -50,8 +49,5 @@ public class V9 {
         setValues(values);
         return this;
     }
-
-
-
 
 }

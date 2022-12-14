@@ -6,26 +6,22 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name="v1m")
+@Table(name = "v1m")
 public class V1m {
 
-
-
     @Id
-    @Column(name ="col1")
+    @Column(name = "col1")
     private String time;
-    @Column(name ="col2")
+    @Column(name = "col2")
     private String gm;
-    @Column(name ="col3")
+    @Column(name = "col3")
     private String nm;
-    @Column(name="col4")
+    @Column(name = "col4")
     private String sm;
 
-    public V1m(){}
-
+    public V1m() {
+    }
 
     public V1m(String time, String gm, String nm, String sm) {
         this.time = time;
@@ -85,6 +81,5 @@ public class V1m {
         setSm(sm);
         return this;
     }
-
 
 }

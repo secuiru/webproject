@@ -43,6 +43,8 @@ public class UserRestController {
     private V8repo v8repo;
     @Autowired
     private V9repo v9repo;
+    @Autowired
+    private V10repo v10repo;
 
     @PostMapping("register")
     public ResponseEntity<String> register(
@@ -53,10 +55,8 @@ public class UserRestController {
         if (username != null && password != null) {
             User u = uRepo.register(username, email, password);
             return new ResponseEntity<>(u.getUsername(), HttpStatus.OK);
-        }
-        else
+        } else
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
 
     }
 
@@ -69,7 +69,7 @@ public class UserRestController {
         if (token == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-            return new ResponseEntity<>(token, HttpStatus.OK);
+        return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
     @PostMapping("delete")
@@ -160,6 +160,11 @@ public class UserRestController {
     @GetMapping("v9")
     List<V9> datav9() {
         return v9repo.findAll();
+    }
+
+    @GetMapping("v10")
+    List<V10> datav10() {
+        return v10repo.findAll();
     }
 
 }

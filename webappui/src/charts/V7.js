@@ -23,6 +23,7 @@ export default function V7() {
 
   const [v750, setv750] = useState([])
   const [v7ppm, setv7ppm] = useState([])
+  const [v10, setv10] = useState([])
 
   useEffect(() => {
     axios.get(urlv750)
@@ -30,7 +31,7 @@ export default function V7() {
         console.log(response.data)
         setv750(response.data)
       }).catch(error => {
-        alert(error.response.error)
+        console.log(error.response.error)
       })
   }, [])
   useEffect(() => {
@@ -39,9 +40,19 @@ export default function V7() {
         console.log(response.data)
         setv7ppm(response.data)
       }).catch(error => {
-        alert(error.response.error)
+        console.log(error.response.error)
       })
   }, [])
+  useEffect(() => {
+    axios.get('http://localhost:8080/v10')
+      .then((response) => {
+        console.log(response.data)
+        setv10(response.data)
+      }).catch(error => {
+        console.log("virhe v10")
+      })
+  }, [])
+
   const v7chart = {
     labels: v7ppm.map(d => d.time),
 
@@ -58,7 +69,7 @@ export default function V7() {
           xAxisKey: 'time',
           yAxisKey: 'fifty'
         },
-        "yAxisID":'y'
+        "yAxisID": 'y'
       },
       {
         label: 'Temperature',
@@ -71,22 +82,63 @@ export default function V7() {
           xAxisKey: 'time',
           yAxisKey: 'ppm',
         },
-        "yAxisID":'y1'
-      }, 
+        "yAxisID": 'y1'
+      },
+      {
+        label: 'History',
+        backgroundColor: 'rgba(255,255,255,1)',
+        borderColor: 'rgba(0,0,0,0)',
+        borderWidth: 2,
+        data: v10,
+        spanGaps: false,
+        pointRadius: 2,
+        pointHoverRadius: 7,
+
+        parsing: {
+          xAxisKey: 'time',
+          yAxisKey: 'y',
+
+
+        },
+
+
+        "yAxisID": 'y1'
+
+      },
     ]
+  }
+
+  const tooltip = {
+    yAlign: 'bottom',
+    callbacks: {
+      title: function (chart) {
+        /*         console.log(chart[0].dataset.data)
+                console.log(chart[0].dataIndex) */
+        const year = chart[0].dataset.data[chart[0].dataIndex].time
+        return year;
+      },
+      label: function (context) {
+        /* console.log(context.dataset.data) */
+        const happening = context.dataset.data[context.dataIndex].info
+
+        return happening;
+      }
+    }
   }
 
   const options = {
     type: 'line',
     pointRadius: 1,
-pointHoverRadius: 1,
+    pointHoverRadius: 1,
     responsive: true,
     interaction: {
-      mode:'index',
-      intersect: false,
+      mode: 'nearest',
+      intersect: true,
     },
     stacked: false,
-    plugins: {},
+    plugins: {
+      tooltip,
+    },
 
     scales: {
       x: {
@@ -94,23 +146,24 @@ pointHoverRadius: 1,
         max: 2022,
         title: {
           display: true,
-          text: "Time in years",
+          text: "time in years",
         },
-        },
+      },
       y1: {
         type: 'linear',
         title: {
-        display: true,
-        position: 'left',
-        text:'CO2 ppm'
+          display: true,
+          position: 'left',
+          text: 'CO2 ppm'
         },
       },
+
       y: {
         type: 'linear',
         position: 'right',
         title: {
-        display: true,
-        text:'Temperature anomaly'
+          display: true,
+          text: 'Temperature anomaly'
         },
         // grid line settings
         grid: {
@@ -120,7 +173,7 @@ pointHoverRadius: 1,
     }
   }
   return (
-    <div class="linkki1" style={{maxWidth:'1500px'}}>
+    <div class="linkki1" style={{ maxWidth: '1500px' }}>
       <Line options={options} data={v7chart} />
       <p> Evolution of global temperature over the past two million years </p>
       <p > <a href="http://carolynsnyder.com/publications.php">Dataset</a> </p>
