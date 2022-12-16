@@ -1,14 +1,14 @@
-WebApp - ilmastonmuutokseen liittyvän tiedon visualisointityökalu 
+#WebApp - ilmastonmuutokseen liittyvän tiedon visualisointityökalu 
 
 Tekijät: Tommi Jouppila, Tommi Kyllönen, Vili Kauhanen ja Juha Nieminen 
 
  
 
-Esittely 
+##Esittely 
 
 WebApp on Oulun ammattikorkeakoulun 2.vuoden syksyn sovellusprojektina neljän hengen ryhmässä suunniteltu ja toteutettu sovellus, jolla voi tarkastella ilmastonmuutokseen liittyvää tietoa visuaalisesti erilaisten kaavioiden avulla. Sovelluksen frontend on toteutettu Reactilla ja backend Javalla. Tietokanta on MySQL-pohjainen. 
 
-Käyttöliittymä 
+###Käyttöliittymä 
 
 Käyttäjän saapuessa sivustolle ensimmäistä kertaa hänen täytyy luoda itselleen käyttäjätili Signup-linkin kautta. Käyttäjätilin luonti vaatii käyttäjältä sähköpostin, käyttäjänimen ja salasanan. (Kuva 1.) 
 
@@ -32,7 +32,7 @@ Kun tili on saatu luotua, käyttäjä voi kirjautua sisään omalla käyttäjät
 
 KUVA 2. Näkymä päästölähteistä 
 
-Tietokanta 
+###Tietokanta 
 
 Ohjelman tietokanta on MySQL pohjainen.  Tietokannasta löytyy kaikkien kaavioiden datat.  Tietokantaan myös tallentuu Käyttäjän luomat käyttäjätunnukset. Käyttäjän poistaessa tilinsä, tunnukset poistuvat tietokannasta. 
 
