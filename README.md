@@ -25,4 +25,4 @@ KUVA 2. Näkymä päästölähteistä
 
 Ohjelman tietokanta on MySQL pohjainen. Tietokannasta löytyy kaikkien kaavioiden datat. Tietokantaan myös tallentuu Käyttäjän luomat käyttäjätunnukset. Käyttäjän poistaessa tilinsä, tunnukset poistuvat tietokannasta.
 
-Sovellus pyörii [Google Cloud Platformissa](webproject-370907.ew.r.appspot.com ".")
+Sovellus pyörii [Google Cloud Platformissa](webproject1-375610.ey.r.appspot.com ".")
